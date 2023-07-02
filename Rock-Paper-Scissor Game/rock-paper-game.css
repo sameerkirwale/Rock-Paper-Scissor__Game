@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+header {
+    color: #FF00FF;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
+}
+
+p.css-update-score {
+    color: rgba(202, 255, 9, 0.839);
+    font-size: 28px;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;;
+}
+
+p.css-show-moves {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p#result {
+    color: #00FFFF;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+    font-family: 'Courier New', Courier, monospace;;
+}
+
+button.game-icon {
+    background-color: black;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 5px;
+    padding: 29.5px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+button#reset-btn {
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 192, 203);
+    color: blue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#reset-btn:hover {
+    background-color: rgb(255, 192, 203,0.9);;
+}
+
+button#reset-btn:active {
+    background-color: palevioletred;
+}
+
+img.img {
+    height: 58px;
+    width: 60px;
+}
