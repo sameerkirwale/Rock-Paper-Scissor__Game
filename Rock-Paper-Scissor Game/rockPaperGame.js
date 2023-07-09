@@ -99,19 +99,20 @@ let autoPlayIntervalId ; // Interval for Auto Play
 
 // FUNCTION TO CALL WHEN AUTO PLAY BUTTON CLICKED
 const autoPlay =()=> {
+    
     // CHANGE THE BUTTON TO STOP PLAY
     autoPlayEle.innerHTML = `<button id="css-stop-btn" class="css-auto-play-btn" onclick=stopAutoPlay()>
                                     Stop Play
                                 </button>`;
 
     setTimeout ( 'autoPlayGame()', 0 ); // SET TO CALL IMMEDIATELY WHEN BUTTON CLICKED
-    autoPlayIntervalId = setInterval ( 'autoPlayGame()', 3000 ); // CALLS AFETR EVERY 3 SEC
+    autoPlayIntervalId = setInterval ( 'autoPlayGame()', 3000 ); 
 }
 
 // FUNCTION TO STOP AUTO PLAY
 const stopAutoPlay =()=> {
 
-    clearInterval ( autoPlayIntervalId ); // CLEARED THE SET INTERVAL
+    clearInterval ( autoPlayIntervalId );
 
     //BUTTON BACK TO AUTO PLAY
     autoPlayEle.innerHTML = `<button id="css-auto-btn" class="css-auto-play-btn" onclick="autoPlay()"> 
