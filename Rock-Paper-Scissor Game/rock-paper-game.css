@@ -44,6 +44,33 @@ button.game-icon {
     margin-bottom: 5px;
 }
 
+button.css-auto-play-btn {
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#css-auto-btn {
+    background-color: rgb(0, 128, 0);
+}
+
+button#css-auto-btn:hover {
+    background-color: rgb(0, 128, 0, 0.9);
+}
+
+button#css-stop-btn {
+    background-color: rgb(255, 0, 0);
+}
+
+button#css-stop-btn:hover {
+    background-color: rgb(255, 0, 0, 0.9);
+}
+
 button#reset-btn {
     padding: 10px 20px;
     font-family: 'Courier New', Courier, monospace;

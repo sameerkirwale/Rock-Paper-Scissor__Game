@@ -1,32 +1,22 @@
 let compMove ; // COMPUTER MOVE VARIABLE
 let yourMove ; // MOVE SELECTED BY USER
 
-// ROCK FUNCTION
-let rock =()=> {
-    yourMove = 'rock'; 
-    compMove = pickCompMove ();
-
-    playGame (yourMove, compMove);
+// STORING RESULT IN OBJECT FORM
+let result = {
+    win : 'Win',
+    lose : 'Lose', 
+    tie : 'Tie'
 }
 
-// PAPER FUNCTION
-let paper =()=> {
-    yourMove = 'paper'; 
-    compMove = pickCompMove ();
-
-    playGame (yourMove, compMove);
+// SCORE IN OBJECT FORM
+let score = JSON.parse ( localStorage.getItem ('score') ) || {
+    win : 0,
+    lose : 0,
+    tie : 0
 }
 
-// SCISSOR FUNCTION
-let scissor =()=> {
-    yourMove = 'scissor'; 
-    compMove = pickCompMove ();
-
-    playGame (yourMove, compMove);
-}
-
-// FUNCTION TO CHOOSE COMPUTER MOVE
-let pickCompMove =()=>{
+// FUNCTION TO CHOOSE RANDOM MOVE
+let pickMove =()=>{
     let x = Math.floor(Math.random() * 3);
 
     if ( x === 0 ) {
@@ -42,18 +32,28 @@ let pickCompMove =()=>{
     }
 }
 
-// STORING RESULT IN OBJECT FORM
-let result = {
-    win : 'Win',
-    lose : 'Lose', 
-    tie : 'Tie'
+// ROCK FUNCTION
+let rock =()=> {
+    yourMove = 'rock'; 
+    compMove = pickMove ();
+
+    playGame (yourMove, compMove);
 }
 
-// SCORE IN OBJECT FORM
-let score = JSON.parse ( localStorage.getItem ('score') ) || {
-    win : 0,
-    lose : 0,
-    tie : 0
+// PAPER FUNCTION
+let paper =()=> {
+    yourMove = 'paper'; 
+    compMove = pickMove ();
+
+    playGame (yourMove, compMove);
+}
+
+// SCISSOR FUNCTION
+let scissor =()=> {
+    yourMove = 'scissor'; 
+    compMove = pickMove ();
+
+    playGame (yourMove, compMove);
 }
 
 // ELEMENT TO DISPLAY WIN / LOSE / TIE
@@ -93,6 +93,40 @@ let updateScore =( showResult, yourGuess, compGuess)=> {
     // SETTING THE NEW SCORE IN LOCAL-STORAGE
     localStorage.setItem ('score', JSON.stringify(score));
 }
+
+let autoPlayEle = document.querySelector ('.js-auto-play'); //Element containing Auto Play Button
+let autoPlayIntervalId ; // Interval for Auto Play
+
+// FUNCTION TO CALL WHEN AUTO PLAY BUTTON CLICKED
+const autoPlay =()=> {
+    // CHANGE THE BUTTON TO STOP PLAY
+    autoPlayEle.innerHTML = `<button id="css-stop-btn" class="css-auto-play-btn" onclick=stopAutoPlay()>
+                                    Stop Play
+                                </button>`;
+
+    setTimeout ( 'autoPlayGame()', 0 ); // SET TO CALL IMMEDIATELY WHEN BUTTON CLICKED
+    autoPlayIntervalId = setInterval ( 'autoPlayGame()', 3000 ); // CALLS AFETR EVERY 3 SEC
+}
+
+// FUNCTION TO STOP AUTO PLAY
+const stopAutoPlay =()=> {
+
+    clearInterval ( autoPlayIntervalId ); // CLEARED THE SET INTERVAL
+
+    //BUTTON BACK TO AUTO PLAY
+    autoPlayEle.innerHTML = `<button id="css-auto-btn" class="css-auto-play-btn" onclick="autoPlay()"> 
+                                Auto Play 
+                            </button>`;
+}
+
+// FUNCTION THAT DEFINES HOW AUTO PLAY WORKS
+const autoPlayGame =()=> {
+
+    yourMove = pickMove (); // PICKED YOUR MOVE RANDOMLY
+    compMove = pickMove (); // PICKED COMPUTER MOVE RANDOMLY
+
+    playGame ( yourMove, compMove );
+} 
 
 // STORES THE CURRENT RESULT
 let currentResult;
