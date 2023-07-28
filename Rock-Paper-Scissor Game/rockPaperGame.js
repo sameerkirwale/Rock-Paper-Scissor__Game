@@ -9,6 +9,21 @@ rockImgEle.addEventListener ('click', rock);
 paperImgEle.addEventListener ('click', paper);
 scissorImgEle.addEventListener ('click', scissor);
 
+// PLAY THE GAME USING KEYS
+document.body.addEventListener ('keydown', (event)=> {
+    if ( event.key === 'r' || event.key === 'R' ) {
+        rock();
+    }
+
+    else if ( event.key === 'p' || event.key === 'P' ) {
+        paper();
+    }
+
+    else if ( event.key === 's' || event.key === 'S' ) {
+        scissor();
+    }
+});
+
 // STORING RESULT IN OBJECT FORM
 let result = {
     win : 'Win',
