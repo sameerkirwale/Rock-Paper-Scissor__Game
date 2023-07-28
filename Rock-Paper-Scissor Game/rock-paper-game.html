@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="rock-paper-game.css">
 </head>
 <body>
-    <main>
-        <header>
-            <h1> Rock Paper Scissor </h1>
-        </header>
 
+    <header>
+        <h1> Rock Paper Scissor </h1>
+    </header>
+
+    <main>
+        
         <p>
             <button class='game-icon js-rock-img'>
                 <img class="img" src="rock.png" alt="Rock"> 
@@ -40,10 +42,17 @@
         
         <p>
             <button id="reset-btn" onclick="reset()"> Reset Score </button>
-        </p>
+        </p> 
+        <br/><hr/>
+
+        <div id="key-info">
+            Keyboard keys to play Game: <br/>
+            R = Rock &nbsp;
+            P = Paper &nbsp;
+            S = Scissor &nbsp;
+        </div>
 
     </main>
-
 
     <script src="rockPaperGame.js"></script>
 </body>
