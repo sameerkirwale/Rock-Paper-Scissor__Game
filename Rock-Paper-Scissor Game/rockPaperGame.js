@@ -1,6 +1,14 @@
 let compMove ; // COMPUTER MOVE VARIABLE
 let yourMove ; // MOVE SELECTED BY USER
 
+let rockImgEle = document.querySelector ('.js-rock-img');
+let paperImgEle = document.querySelector ('.js-paper-img');
+let scissorImgEle = document.querySelector ('.js-scissor-img');
+
+rockImgEle.addEventListener ('click', rock);
+paperImgEle.addEventListener ('click', paper);
+scissorImgEle.addEventListener ('click', scissor);
+
 // STORING RESULT IN OBJECT FORM
 let result = {
     win : 'Win',
@@ -33,27 +41,27 @@ let pickMove =()=>{
 }
 
 // ROCK FUNCTION
-let rock =()=> {
-    yourMove = 'rock'; 
-    compMove = pickMove ();
+function rock() {
+    yourMove = 'rock';
+    compMove = pickMove();
 
-    playGame (yourMove, compMove);
+    playGame(yourMove, compMove);
 }
 
 // PAPER FUNCTION
-let paper =()=> {
-    yourMove = 'paper'; 
-    compMove = pickMove ();
+function paper() {
+    yourMove = 'paper';
+    compMove = pickMove();
 
-    playGame (yourMove, compMove);
+    playGame(yourMove, compMove);
 }
 
 // SCISSOR FUNCTION
-let scissor =()=> {
-    yourMove = 'scissor'; 
-    compMove = pickMove ();
+function scissor() {
+    yourMove = 'scissor';
+    compMove = pickMove();
 
-    playGame (yourMove, compMove);
+    playGame(yourMove, compMove);
 }
 
 // ELEMENT TO DISPLAY WIN / LOSE / TIE
